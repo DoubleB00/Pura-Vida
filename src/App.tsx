@@ -1,7 +1,21 @@
+import Hero from './components/Hero'
+import Services from './components/Services'
+import About from './components/About'
+import Contact from './components/Contact'
+import Nav from './components/Nav'
+import Footer from './components/Footer'
+
 export default function App() {
   return (
-    <div>
-      <h1>Pura Vida Events</h1>
-    </div>
+    <>
+      <Nav />
+      <main>
+        <Hero />
+        <Services />
+        <About />
+        <Contact />
+      </main>
+      <Footer />
+    </>
   )
 }
