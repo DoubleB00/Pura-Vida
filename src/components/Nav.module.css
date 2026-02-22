@@ -1,0 +1,135 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: var(--space-5) 0;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease;
+}
+
+.scrolled {
+  background-color: var(--color-surface);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-4) 0;
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.01em;
+  transition: color 0.3s ease;
+}
+
+.scrolled .logo {
+  color: var(--color-primary);
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+.link {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.88);
+  transition: color var(--transition);
+}
+
+.link:hover {
+  color: #fff;
+}
+
+.scrolled .link {
+  color: var(--color-text-muted);
+}
+
+.scrolled .link:hover {
+  color: var(--color-primary);
+}
+
+.cta {
+  font-size: 0.875rem;
+  padding: var(--space-3) var(--space-6);
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: var(--space-2);
+}
+
+.bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: #fff;
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.scrolled .bar {
+  background-color: var(--color-primary);
+}
+
+.barTop {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.barMid {
+  opacity: 0;
+}
+
+.barBot {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+  .burger {
+    display: flex;
+  }
+
+  .links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    background-color: var(--color-surface);
+    padding: var(--space-4) var(--space-6) var(--space-6);
+    box-shadow: var(--shadow-md);
+  }
+
+  .links.open {
+    display: flex;
+  }
+
+  .link {
+    color: var(--color-text-muted);
+    padding: var(--space-4) 0;
+    width: 100%;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .link:hover {
+    color: var(--color-primary);
+  }
+
+  .cta {
+    margin-top: var(--space-4);
+  }
+}
