@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/health", "destination": "/health.json" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
